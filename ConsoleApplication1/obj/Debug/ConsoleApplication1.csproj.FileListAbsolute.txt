@@ -1,0 +1,13 @@
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.AssemblyReference.cache
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\Structurizr.Client.dll
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\Structurizr.Core.dll
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CopyComplete
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\user\RiderProjects\Parcial\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
