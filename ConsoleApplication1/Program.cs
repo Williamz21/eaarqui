@@ -17,22 +17,24 @@ namespace ConsoleApplication1
             const string apiSecret = "45a75bee-1813-44c7-8399-0fa996482260";
 
             StructurizrClient structurizrClient = new StructurizrClient(apiKey, apiSecret);
-            Workspace workspace = new Workspace("C4 Model - Technogym Unified Ecosystem", "Sistema de Technogym Unified Ecosystem");
+            Workspace workspace = new Workspace("C4 Model - TechnoGym Unified Ecosystem", "Sistema de TechnoGym Unified Ecosystem");
             Model model = workspace.Model;
             ViewSet viewSet = workspace.Views;
 
             // 1. Diagrama de Contexto
-            SoftwareSystem technoGym = model.AddSoftwareSystem("Technogym Unified Ecosystem", "Permite la adquisición de productos y servicios de Technogym");
+            SoftwareSystem technoGym = model.AddSoftwareSystem("TechnoGym Unified Ecosystem", "Permite la adquisición de productos y servicios de TechnoGym");
+            SoftwareSystem googleSystem = model.AddSoftwareSystem("Google Tools", "Herramientas de Google para el desarrollo de TechnoGym");
 
             Person deportista = model.AddPerson("Deportista", "Usuario que utiliza los productos de TechnoGym.");
             Person userComercial = model.AddPerson("User Comercial", "Usuario que ofrece los productos de gimnasios de TechnoGym a sus clientes.");
             Person personal = model.AddPerson("Fitness", "Usuario que utiliza la plataforma TechnoGym para crear planes de entrenamiento para sus clientes.");
             Person developer = model.AddPerson("Developer", "Usuario que desarrolla la plataforma TechnoGym.");
 
-            deportista.Uses(technoGym, "Realiza consultas a la plataforma Technogym Unified Ecosystem");
-            userComercial.Uses(technoGym, "Realiza consultas a la plataforma Technogym Unified Ecosystem");
-            personal.Uses(technoGym, "Realiza consultas a la plataforma Technogym Unified Ecosystem");
-            developer.Uses(technoGym, "Realiza consultas a la plataforma Technogym Unified Ecosystem");
+            technoGym.Uses(googleSystem, "Utiliza");
+            deportista.Uses(technoGym, "Realiza consultas a la plataforma TechnoGym Unified Ecosystem");
+            userComercial.Uses(technoGym, "Realiza consultas a la plataforma TechnoGym Unified Ecosystem");
+            personal.Uses(technoGym, "Realiza consultas a la plataforma TechnoGym Unified Ecosystem");
+            developer.Uses(technoGym, "Realiza consultas a la plataforma TechnoGym Unified Ecosystem");
 
             SystemContextView contextView = viewSet.CreateSystemContextView(technoGym, "Contexto", "Diagrama de contexto");
             contextView.PaperSize = PaperSize.A4_Landscape;
@@ -45,6 +47,7 @@ namespace ConsoleApplication1
             userComercial.AddTags("User Comercial");
             personal.AddTags("Fitness");
             developer.AddTags("Developer");
+            googleSystem.AddTags("Google");
             
             Styles styles = viewSet.Configuration.Styles;
             styles.Add(new ElementStyle("Deportista") { Background = "#0a60ff", Color = "#ffffff", Shape = Shape.Person });
@@ -52,6 +55,7 @@ namespace ConsoleApplication1
             styles.Add(new ElementStyle("Fitness") { Background = "#facc2e", Color = "#ffffff", Shape = Shape.Person });
             styles.Add(new ElementStyle("Developer") { Background = "#008f39", Shape = Shape.Robot });
             styles.Add(new ElementStyle("SistemaTechnoGym") { Background = "#008f39", Color = "#ffffff", Shape = Shape.RoundedBox });
+            styles.Add(new ElementStyle("Google") { Background = "#90714c", Color = "#ffffff", Shape = Shape.RoundedBox });
 
             // 2. Diagrama de Contenedores
             Container mobileApplication = technoGym.AddContainer("Mobile App", "Permite que los usuarios accedan a programas personales desde cualquier lugar.", "Kotlin, Swift");
@@ -219,6 +223,7 @@ namespace ConsoleApplication1
             componentView.Add(webApplication);
             componentView.Add(apiGateway);
             componentView.Add(monitoringContextDatabase);
+            componentView.Add(googleSystem);
             componentView.AddAllComponents();
 
             structurizrClient.UnlockWorkspace(workspaceId);
